@@ -1,22 +1,18 @@
 # Quantitative Risk Management: Monte Carlo VaR with Futures Hedging
 
-This project implements a Monte Carlo-based Value-at-Risk (VaR) model for a portfolio of S&P 500 stocks, with systematic risk hedged using index futures. It showcases quantitative risk management techniques commonly used in professional trading and portfolio risk analysis.
+In this project, we construct a portfolio through Markowitz theory for a 1-year investment horizon and hedge it using index futures to reduce the systematic risk of the market. We implement a Monte Carlo Value at Risk (VaR) model using historical data and simulations via geometric Brownian motion, and compare the VaR for both the hedged and unhedged portfolios. We observe the efficiency of the hedging and successfully reduce the risk.
 
 ##  Overview
 
-- **Goal**: Estimate portfolio risk using Monte Carlo simulation and reduce exposure to market movements via hedging.
-- **Approach**: 
-  - Generate future price paths for each stock using historical data and stochastic modeling.
-  - Compute portfolio returns and simulate risk metrics.
-  - Hedge systematic risk using S&P 500 index futures.
-  - Evaluate the effectiveness of the hedge.
-
-##  Methodology
-
-- **VaR Estimation**: Monte Carlo simulation based on multivariate normal or empirical return distributions.
-- **Hedging**: Use of beta exposure to compute the optimal hedge ratio with S&P 500 index futures.
-- **Pricing & Returns**: Returns modeled via log-normal distribution; scenarios are simulated to estimate the tail loss.
-- **Backtesting (optional)**: Performance of the hedged portfolio can be tested over historical periods.
+- **Goal**: Use Monte Carlo simulations to evaluate risk and make it quantifiable, then significantly reduce the portfolio’s exposure to systematic market risk.
+- 
+- **Approach**:
+  - Construct a portfolio by implementing Markowitz portfolio theory and applying it on the historical (daily) closing prices of non-dominated stocks.
+  - Use the the historical data and geometric brownian motion to simulate the future behaviors of the prices.
+  - Use this simulation to calculate the Value at Risk (VaR) of the portfolio, before hedging.
+  - Use Capital Asset Pricing Model (CAPM) to calculate beta, i.e. to quantify the exposure of the portfolio to the systematic risk of the market (S&P 500 index).
+  - Hedge the systematic risk by shorting S&P 500 index futures.
+  - Validate the risk reduction by comaring the VaR of the hedged and unhedged portfolios.
 
 ##  Technologies
 
@@ -30,5 +26,5 @@ This project implements a Monte Carlo-based Value-at-Risk (VaR) model for a port
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/quant-risk-management.git
+   git clone https://github.com/hnahari75/quant-risk-management.git
    cd quant-risk-management
